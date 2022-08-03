@@ -73,33 +73,6 @@ export type StakePoolMetadata = {
 export const defaultSecondaryColor = 'rgba(29, 78, 216, 255)'
 
 export const stakePoolMetadatas: StakePoolMetadata[] = [
-{
-    name: 'dictators',
-    displayName: 'Dictators',
-    stakePoolAddress: new PublicKey(
-      'FGwmVFD2b8UcdwUzwcaPzTSd8UCiyp5EoeNjoaqwnAy6'
-    ),
-    websiteUrl: 'https://citadel.thedictator.xyz',
-    receiptType: ReceiptType.Original,
-    maxStaked: 5000, // update with collection size
-    imageUrl:
-      'https://shdw-drive.genesysgo.net/4B5uhQo61B8JrutW1EXYhedw8uycMWE8JVmw1onbLjTh/Dlogo.svg',
-    tokenStandard: TokenStandard.NonFungible,
-    hideAllowedTokens: false,
-    hidden: true,
-    styles: {
-      fontFamily: 'Industry, sans-serif',
-      fontWeight: 500,
-    },
-    colors: {
-      primary: '#1A1A1D',
-      secondary: '#C3073F',
-      accent: '#6F2232',
-      fontColor: '#FFFFFF',
-      fontColorSecondary: '#FFFFFF',
-      backgroundSecondary: '#4E4E50',
-    },
-  },
   {
     name: 'thornode-elite',
     displayName: 'ThorNode RPCs',
@@ -112,8 +85,8 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     imageUrl:
       'https://creator-hub-prod.s3.us-east-2.amazonaws.com/thornode_pfp_1656943062647.gif',
     tokenStandard: TokenStandard.NonFungible,
-    hideAllowedTokens: false,
-    hidden: true,
+    hideAllowedTokens: true,
+    hidden: false,
     styles: {
       fontFamily: 'Industry, sans-serif',
       fontWeight: 500,
