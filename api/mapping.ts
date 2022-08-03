@@ -83,7 +83,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     receiptType: ReceiptType.Original,
     maxStaked: 33, // update with collection size
     imageUrl:
-      'https://honey.land/images/logo.png',
+      'https://creator-hub-prod.s3.us-east-2.amazonaws.com/thornode_pfp_1656943062647.gif',
     tokenStandard: TokenStandard.NonFungible,
     hideAllowedTokens: false,
     hidden: true,
