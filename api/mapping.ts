@@ -73,17 +73,17 @@ export type StakePoolMetadata = {
 export const defaultSecondaryColor = 'rgba(29, 78, 216, 255)'
 
 export const stakePoolMetadatas: StakePoolMetadata[] = [
-  {
-    name: 'thornode-elite',
-    displayName: 'Elite Pass',
+{
+    name: 'dictators',
+    displayName: 'Dictators',
     stakePoolAddress: new PublicKey(
-      'J79xX6CYxXZzXQSy6g6hkBnnfFs7pRDjqy4nFKjnXvu9'
+      'FGwmVFD2b8UcdwUzwcaPzTSd8UCiyp5EoeNjoaqwnAy6'
     ),
-    websiteUrl: 'https://thornode.io',
+    websiteUrl: 'https://citadel.thedictator.xyz',
     receiptType: ReceiptType.Original,
-    maxStaked: 33, // update with collection size
+    maxStaked: 5000, // update with collection size
     imageUrl:
-      'https://v4pnvyuwfsaiymwlmqr4mvemptw2lmqyrwmilxg2prlw7qrqf3qq.arweave.net/rx7a4pYsgIwyy2QjxlSMfO2lshiNmIXc2nxXb8IwLuE?ext=gif',
+      'https://shdw-drive.genesysgo.net/4B5uhQo61B8JrutW1EXYhedw8uycMWE8JVmw1onbLjTh/Dlogo.svg',
     tokenStandard: TokenStandard.NonFungible,
     hideAllowedTokens: false,
     hidden: true,
@@ -92,23 +92,25 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       fontWeight: 500,
     },
     colors: {
-      primary: '#000000',
-      secondary: '#4da1de',
-      accent: '#1fcfb11c',
+      primary: '#1A1A1D',
+      secondary: '#C3073F',
+      accent: '#6F2232',
       fontColor: '#FFFFFF',
+      fontColorSecondary: '#FFFFFF',
+      backgroundSecondary: '#4E4E50',
     },
   },
   {
-    name: 'thornode-classic',
-    displayName: 'Classic Pass',
+    name: 'thornode-elite',
+    displayName: 'ThorNode RPCs',
     stakePoolAddress: new PublicKey(
       'J79xX6CYxXZzXQSy6g6hkBnnfFs7pRDjqy4nFKjnXvu9'
     ),
     websiteUrl: 'https://thornode.io',
     receiptType: ReceiptType.Original,
-    maxStaked: 300, // update with collection size
+    maxStaked: 33, // update with collection size
     imageUrl:
-      'https://v4pnvyuwfsaiymwlmqr4mvemptw2lmqyrwmilxg2prlw7qrqf3qq.arweave.net/rx7a4pYsgIwyy2QjxlSMfO2lshiNmIXc2nxXb8IwLuE?ext=gif',
+      'https://creator-hub-prod.s3.us-east-2.amazonaws.com/thornode_pfp_1656943062647.gif',
     tokenStandard: TokenStandard.NonFungible,
     hideAllowedTokens: false,
     hidden: true,
