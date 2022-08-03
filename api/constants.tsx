@@ -1,3 +1,3 @@
 import { PublicKey } from "@solana/web3.js";
 
-export const STAKE_POOL_ID = new PublicKey("BeunK2rKRNXbL6YsMkKDPD4f24Ms4dcj2JpsN6KCjBjY")
+export const STAKE_POOL_ID = new PublicKey("J79xX6CYxXZzXQSy6g6hkBnnfFs7pRDjqy4nFKjnXvu9")
