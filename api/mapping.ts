@@ -98,4 +98,29 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       fontColor: '#FFFFFF',
     },
   },
+  {
+    name: 'thornode-classic',
+    displayName: 'Classic Pass',
+    stakePoolAddress: new PublicKey(
+      'J79xX6CYxXZzXQSy6g6hkBnnfFs7pRDjqy4nFKjnXvu9'
+    ),
+    websiteUrl: 'https://thornode.io',
+    receiptType: ReceiptType.Original,
+    maxStaked: 300, // update with collection size
+    imageUrl:
+      'https://v4pnvyuwfsaiymwlmqr4mvemptw2lmqyrwmilxg2prlw7qrqf3qq.arweave.net/rx7a4pYsgIwyy2QjxlSMfO2lshiNmIXc2nxXb8IwLuE?ext=gif',
+    tokenStandard: TokenStandard.NonFungible,
+    hideAllowedTokens: false,
+    hidden: true,
+    styles: {
+      fontFamily: 'Industry, sans-serif',
+      fontWeight: 500,
+    },
+    colors: {
+      primary: '#000000',
+      secondary: '#4da1de',
+      accent: '#1fcfb11c',
+      fontColor: '#FFFFFF',
+    },
+  },
 ]
