@@ -86,7 +86,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       'https://creator-hub-prod.s3.us-east-2.amazonaws.com/thornode_pfp_1656943062647.gif',
     tokenStandard: TokenStandard.NonFungible,
     hideAllowedTokens: false,
-    hidden: false,
+    hidden: true,
     styles: {
       fontFamily: 'Industry, sans-serif',
       fontWeight: 500,
@@ -98,4 +98,5 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       fontColor: '#FFFFFF',
     },
   },
+]
 ]
