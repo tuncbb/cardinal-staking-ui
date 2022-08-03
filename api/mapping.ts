@@ -83,7 +83,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     receiptType: ReceiptType.Original,
     maxStaked: 33, // update with collection size
     imageUrl:
-      'https://mint.thornode.io/nft.gif',
+      'https://honey.land/images/logo.png',
     tokenStandard: TokenStandard.NonFungible,
     hideAllowedTokens: false,
     hidden: true,
