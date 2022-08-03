@@ -73,7 +73,7 @@ export type StakePoolMetadata = {
 export const defaultSecondaryColor = 'rgba(29, 78, 216, 255)'
 
 export const stakePoolMetadatas: StakePoolMetadata[] = [
-  {
+    {
     name: 'thornode-elite',
     displayName: 'ThorNode RPCs',
     stakePoolAddress: new PublicKey(
