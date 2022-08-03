@@ -75,7 +75,7 @@ export const defaultSecondaryColor = 'rgba(29, 78, 216, 255)'
 export const stakePoolMetadatas: StakePoolMetadata[] = [
   {
     name: 'thornode-elite',
-    displayName: 'ThorNode RPCs',
+    displayName: 'Elite Pass',
     stakePoolAddress: new PublicKey(
       'J79xX6CYxXZzXQSy6g6hkBnnfFs7pRDjqy4nFKjnXvu9'
     ),
@@ -83,10 +83,35 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     receiptType: ReceiptType.Original,
     maxStaked: 33, // update with collection size
     imageUrl:
-      'https://creator-hub-prod.s3.us-east-2.amazonaws.com/thornode_pfp_1656943062647.gif',
+      'https://v4pnvyuwfsaiymwlmqr4mvemptw2lmqyrwmilxg2prlw7qrqf3qq.arweave.net/rx7a4pYsgIwyy2QjxlSMfO2lshiNmIXc2nxXb8IwLuE?ext=gif',
     tokenStandard: TokenStandard.NonFungible,
-    hideAllowedTokens: true,
-    hidden: false,
+    hideAllowedTokens: false,
+    hidden: true,
+    styles: {
+      fontFamily: 'Industry, sans-serif',
+      fontWeight: 500,
+    },
+    colors: {
+      primary: '#000000',
+      secondary: '#4da1de',
+      accent: '#1fcfb11c',
+      fontColor: '#FFFFFF',
+    },
+  },
+  {
+    name: 'thornode-classic',
+    displayName: 'Classic Pass',
+    stakePoolAddress: new PublicKey(
+      'J79xX6CYxXZzXQSy6g6hkBnnfFs7pRDjqy4nFKjnXvu9'
+    ),
+    websiteUrl: 'https://thornode.io',
+    receiptType: ReceiptType.Original,
+    maxStaked: 300, // update with collection size
+    imageUrl:
+      'https://v4pnvyuwfsaiymwlmqr4mvemptw2lmqyrwmilxg2prlw7qrqf3qq.arweave.net/rx7a4pYsgIwyy2QjxlSMfO2lshiNmIXc2nxXb8IwLuE?ext=gif',
+    tokenStandard: TokenStandard.NonFungible,
+    hideAllowedTokens: false,
+    hidden: true,
     styles: {
       fontFamily: 'Industry, sans-serif',
       fontWeight: 500,
