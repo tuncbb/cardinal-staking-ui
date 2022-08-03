@@ -74,7 +74,7 @@ export const defaultSecondaryColor = 'rgba(29, 78, 216, 255)'
 
 export const stakePoolMetadatas: StakePoolMetadata[] = [
   {
-    name: 'thornode',
+    name: 'thornode-elite',
     displayName: 'ThorNode RPCs',
     stakePoolAddress: new PublicKey(
       'J79xX6CYxXZzXQSy6g6hkBnnfFs7pRDjqy4nFKjnXvu9'
@@ -92,12 +92,10 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       fontWeight: 500,
     },
     colors: {
-      primary: '#1A1A1D',
-      secondary: '#C3073F',
-      accent: '#6F2232',
+      primary: '#000000',
+      secondary: '#4da1de',
+      accent: '#1fcfb11c',
       fontColor: '#FFFFFF',
-      fontColorSecondary: '#FFFFFF',
-      backgroundSecondary: '#4E4E50',
     },
   },
 ]
