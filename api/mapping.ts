@@ -1,7 +1,7 @@
-import { AirdropMetadata } from './../common/Airdrop'
+import type { AirdropMetadata } from './../common/Airdrop'
 import { PublicKey } from '@solana/web3.js'
 import { ReceiptType } from '@cardinal/staking/dist/cjs/programs/stakePool'
-import { CSSProperties } from 'react'
+import type { CSSProperties } from 'react'
 
 export enum TokenStandard {
   // Fungible, can have more than 1
@@ -86,7 +86,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       'https://v4pnvyuwfsaiymwlmqr4mvemptw2lmqyrwmilxg2prlw7qrqf3qq.arweave.net/rx7a4pYsgIwyy2QjxlSMfO2lshiNmIXc2nxXb8IwLuE?ext=gif',
     tokenStandard: TokenStandard.NonFungible,
     hideAllowedTokens: false,
-    hidden: true,
+    hidden: false,
     styles: {
       fontFamily: 'Industry, sans-serif',
       fontWeight: 500,
@@ -102,7 +102,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     name: 'thornode-classic',
     displayName: 'Classic Pass',
     stakePoolAddress: new PublicKey(
-      'J79xX6CYxXZzXQSy6g6hkBnnfFs7pRDjqy4nFKjnXvu9'
+      'J2kvKqkTMbXdbWS3eGmJFv35tKTrzy7wxkJmCzEJ7KAG' // todo fixme address must be unique
     ),
     websiteUrl: 'https://thornode.io',
     receiptType: ReceiptType.Original,
@@ -111,7 +111,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       'https://v4pnvyuwfsaiymwlmqr4mvemptw2lmqyrwmilxg2prlw7qrqf3qq.arweave.net/rx7a4pYsgIwyy2QjxlSMfO2lshiNmIXc2nxXb8IwLuE?ext=gif',
     tokenStandard: TokenStandard.NonFungible,
     hideAllowedTokens: false,
-    hidden: true,
+    hidden: false,
     styles: {
       fontFamily: 'Industry, sans-serif',
       fontWeight: 500,
