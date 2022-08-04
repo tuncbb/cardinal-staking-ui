@@ -45,17 +45,17 @@ export const useStats = () => {
   )
 }
 
-// const statsNameMapping = [
-//   {
-//     key: 'total-active-staked-tokens',
-//     displayName: 'Total Staked Tokens',
-//   },
-//   {
-//     key: 'total-active-stake-entries',
-//     displayName: 'Total Staked NFTs',
-//   },
-//   {
-//     key: 'total-stake-pools',
-//     displayName: 'Total Stake Pools',
-//   },
-// ]
+const statsNameMapping = [
+  {
+    key: 'total-active-staked-tokens',
+    displayName: 'Total Staked Tokens',
+  },
+  {
+    key: 'total-active-stake-entries',
+    displayName: 'Total Staked NFTs',
+  },
+  {
+    key: 'total-stake-pools',
+    displayName: 'Total Stake Pools',
+  },
+]
