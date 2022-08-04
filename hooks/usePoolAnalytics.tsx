@@ -3,7 +3,6 @@ import { useQuery } from 'react-query'
 import { useStakePoolMetadata } from './useStakePoolMetadata'
 import {
   getActiveStakeEntriesForPool,
-  getAllStakeEntries,
 } from '@cardinal/staking/dist/cjs/programs/stakePool/accounts'
 import { useEnvironmentCtx } from 'providers/EnvironmentProvider'
 import { Metadata, MetadataData } from '@metaplex-foundation/mpl-token-metadata'

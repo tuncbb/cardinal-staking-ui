@@ -1,12 +1,10 @@
 import { darken, lighten } from 'polished'
-import { FaDiscord, FaGithub, FaMedium, FaTwitter } from 'react-icons/fa'
-import { contrastColorMode, hexColor } from './utils'
+import { FaDiscord, FaTwitter } from 'react-icons/fa'
+import { contrastColorMode } from './utils'
 
 const SOCIALS = {
-  discord: { icon: <FaDiscord />, link: 'https://discord.gg/byq6uNTugq' },
-  github: { icon: <FaGithub />, link: 'https://github.com/cardinal-labs' },
-  medium: { icon: <FaMedium />, link: 'https://cardinal-labs.medium.com/' },
-  twitter: { icon: <FaTwitter />, link: 'https://twitter.com/cardinal_labs' },
+  discord: { icon: <FaDiscord />, link: 'https://discord.gg/thornode' },
+  twitter: { icon: <FaTwitter />, link: 'https://twitter.com/ThorNodeRPC' },
 }
 
 export const Footer = ({
@@ -26,6 +24,7 @@ export const Footer = ({
       <div className="flex w-full flex-wrap items-start justify-between gap-10 py-10">
         <div className="flex items-center">
           <img
+            alt={'logo'}
             className="inline-block h-[28px]"
             src={
               contrastColorMode(bgColor)[1]
@@ -37,7 +36,7 @@ export const Footer = ({
             className="ml-3 text-2xl font-semibold"
             style={{ color: lighten(0.4, contrastColorMode(bgColor)[0]) }}
           >
-            Cardinal
+            Thor Node
           </span>
         </div>
         <div className="flex gap-10 self-end text-center md:gap-20">
@@ -62,16 +61,7 @@ export const Footer = ({
             >
               Resources
             </div>
-            <a href="https://docs.cardinal.so/" className="text-gray-400">
-              Documentation
-            </a>
-            <a
-              href="https://github.com/cardinal-labs"
-              className="text-gray-400"
-            >
-              Github
-            </a>
-            <a href="mailto:team@cardinal.so" className="text-gray-400">
+            <a href="mailto:contact@thornode.io?subject=Hello!" className="text-gray-400">
               Contact
             </a>
             {/*<a href="" className="text-gray-400">
@@ -106,7 +96,7 @@ export const Footer = ({
         style={{ borderColor: lighten(0.2, bgColor) }}
       >
         <div className="flex items-center justify-center gap-2 text-gray-400">
-          Powered by Cardinal
+          © 2022 Thor Node. All rights reserved.
         </div>
         <div className="flex gap-4 text-gray-200">
           {Object.entries(SOCIALS).map(([id, { icon, link }]) => {

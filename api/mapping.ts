@@ -92,10 +92,10 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       fontWeight: 500,
     },
     colors: {
-      primary: '#000000',
-      secondary: '#4da1de',
-      accent: '#1fcfb11c',
-      fontColor: '#FFFFFF',
+      primary: '#040a05',
+      secondary: '#40834b',
+      accent: 'rgba(31,207,101,0.11)',
+      fontColor: '#e8e8e8',
     },
   },
   {
@@ -117,9 +117,9 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       fontWeight: 500,
     },
     colors: {
-      primary: '#000000',
-      secondary: '#4da1de',
-      accent: '#1fcfb11c',
+      primary: '#131313',
+      secondary: '#858585',
+      accent: 'rgba(31,119,207,0.11)',
       fontColor: '#FFFFFF',
     },
   },

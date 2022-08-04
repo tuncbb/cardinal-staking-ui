@@ -1,7 +1,7 @@
 {
-  "name": "cardinal-staking-ui",
+  "name": "thor-node-staking",
   "version": "0.1.0",
-  "description": "Cardinal staking ui",
+  "description": "Thor Node Staking",
   "private": true,
   "keywords": [
     "solana",
