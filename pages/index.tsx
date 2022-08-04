@@ -6,7 +6,6 @@ import { useStats } from 'hooks/useStats'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEnvironmentCtx } from 'providers/EnvironmentProvider'
-import { FaQuestion } from 'react-icons/fa'
 
 export function Placeholder() {
   return (

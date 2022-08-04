@@ -1,6 +1,5 @@
 import {
   getActiveStakeEntriesForPool,
-  getAllStakeEntries,
 } from '@cardinal/staking/dist/cjs/programs/stakePool/accounts'
 import { Connection } from '@solana/web3.js'
 import { firstParam, tryPublicKey } from 'common/utils'

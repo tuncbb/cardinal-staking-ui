@@ -1,23 +1,25 @@
-import { AccountData, getBatchedMultipleAccounts } from '@cardinal/common'
+import type { AccountData } from '@cardinal/common'
+import { getBatchedMultipleAccounts } from '@cardinal/common'
 import { scan } from '@cardinal/scanner/dist/cjs/programs/cardinalScanner'
-import { StakePoolData } from '@cardinal/staking/dist/cjs/programs/stakePool'
+import type { StakePoolData } from '@cardinal/staking/dist/cjs/programs/stakePool'
 import { getStakePool } from '@cardinal/staking/dist/cjs/programs/stakePool/accounts'
+import * as metaplex from '@metaplex-foundation/mpl-token-metadata'
 import { utils } from '@project-serum/anchor'
-import {
+import * as spl from '@solana/spl-token'
+import type {
   AccountInfo,
+  ParsedAccountData
+} from '@solana/web3.js'
+import {
   Connection,
   Keypair,
-  ParsedAccountData,
   PublicKey,
-  Transaction,
-} from '@solana/web3.js'
-import * as metaplex from '@metaplex-foundation/mpl-token-metadata'
+  Transaction} from '@solana/web3.js';
 import { stakePoolMetadatas } from 'api/mapping'
 import { firstParam, tryPublicKey } from 'common/utils'
 import { allowedTokensForPool } from 'hooks/useAllowedTokenDatas'
 import type { NextApiHandler } from 'next'
 import { ENVIRONMENTS } from 'providers/EnvironmentProvider'
-import * as spl from '@solana/spl-token'
 
 interface GetResponse {
   label: string

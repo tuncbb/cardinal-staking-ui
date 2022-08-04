@@ -1,30 +1,29 @@
-import {
-  AccountData,
-  withFindOrInitAssociatedTokenAccount,
-} from '@cardinal/common'
-import {
-  RewardDistributorData,
-  RewardDistributorKind,
+import type {AccountData} from '@cardinal/common'
+import {withFindOrInitAssociatedTokenAccount} from '@cardinal/common'
+import { executeTransaction, handleError } from '@cardinal/staking'
+import type {
+  RewardDistributorData
 } from '@cardinal/staking/dist/cjs/programs/rewardDistributor'
-import { Wallet } from '@metaplex/js'
+import {
+  RewardDistributorKind} from '@cardinal/staking/dist/cjs/programs/rewardDistributor';
+import type { StakePoolData } from '@cardinal/staking/dist/cjs/programs/stakePool'
+import type { Wallet } from '@metaplex/js'
 import { BN } from '@project-serum/anchor'
+import * as splToken from '@solana/spl-token'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { Keypair, PublicKey, Transaction } from '@solana/web3.js'
+import { FormFieldTitleInput } from 'common/FormFieldInput'
+import { FormInput } from 'common/FormInput'
 import { LoadingSpinner } from 'common/LoadingSpinner'
 import { notify } from 'common/Notification'
-import { useEnvironmentCtx } from 'providers/EnvironmentProvider'
-import { TailSpin } from 'react-loader-spinner'
-import * as splToken from '@solana/spl-token'
-import { useMemo, useState } from 'react'
-import Select from 'react-select'
-import { FormFieldTitleInput } from 'common/FormFieldInput'
-import * as Yup from 'yup'
+import { tryFormatInput, tryParseInput } from 'common/units'
 import { tryPublicKey } from 'common/utils'
 import { useFormik } from 'formik'
-import { StakePoolData } from '@cardinal/staking/dist/cjs/programs/stakePool'
-import { FormInput } from 'common/FormInput'
-import { executeTransaction, handleError } from '@cardinal/staking'
-import { tryFormatInput, tryParseInput } from 'common/units'
+import { useEnvironmentCtx } from 'providers/EnvironmentProvider'
+import { useMemo, useState } from 'react'
+import { TailSpin } from 'react-loader-spinner'
+import Select from 'react-select'
+import * as Yup from 'yup'
 
 const publicKeyValidationTest = (value: string | undefined): boolean => {
   return tryPublicKey(value) ? true : false
@@ -175,7 +174,7 @@ export function StakePoolForm({
           splToken.TOKEN_PROGRAM_ID,
           Keypair.generate() // unused
         )
-        let mintInfo = await checkMint.getMintInfo()
+        const mintInfo = await checkMint.getMintInfo()
         setMintInfo(mintInfo)
         if (
           type === 'update' &&
@@ -746,7 +745,7 @@ export function StakePoolForm({
                         const supply = Number(
                           e.target.value.replaceAll(',', '')
                         )
-                        if (!supply && e.target.value.length != 0) {
+                        if (!supply && e.target.value.length !== 0) {
                           notify({
                             message: `Invalid multiplier decimals`,
                             type: 'error',
@@ -775,7 +774,7 @@ export function StakePoolForm({
                         const supply = Number(
                           e.target.value.replaceAll(',', '')
                         )
-                        if (!supply && e.target.value.length != 0) {
+                        if (!supply && e.target.value.length !== 0) {
                           notify({
                             message: `Invalid default multiplier`,
                             type: 'error',
@@ -830,16 +829,16 @@ export function StakePoolForm({
 }
 
 export const customStyles = {
-  control: (base: {}) => ({
+  control: (base: object) => ({
     ...base,
     background: 'rgb(55, 65, 81)',
     borderColor: 'rgb(107, 114, 128)',
   }),
-  Input: (base: {}) => ({
+  Input: (base: object) => ({
     ...base,
     color: 'white',
   }),
-  menu: (base: {}) => ({
+  menu: (base: object) => ({
     ...base,
     background: 'rgb(55, 65, 81)',
     '&:hover': {
@@ -851,7 +850,7 @@ export const customStyles = {
     borderRadius: 0,
     marginTop: 0,
   }),
-  option: (base: {}) => ({
+  option: (base: object) => ({
     ...base,
     background: 'rgb(55, 65, 81)',
     '&:hover': {
@@ -861,7 +860,7 @@ export const customStyles = {
       background: 'rgb(75, 85, 99) !important',
     },
   }),
-  singleValue: (provided: {}) => ({
+  singleValue: (provided: object) => ({
     ...provided,
     color: 'white',
   }),

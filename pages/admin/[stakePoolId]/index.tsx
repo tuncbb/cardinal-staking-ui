@@ -18,29 +18,29 @@ import {
   withAuthorizeStakeEntry,
   withUpdateStakePool,
 } from '@cardinal/staking/dist/cjs/programs/stakePool/transaction'
-import { Wallet } from '@metaplex/js'
-import { BN, web3 } from '@project-serum/anchor'
+import { findStakeEntryIdFromMint } from '@cardinal/staking/dist/cjs/programs/stakePool/utils'
+import type { Wallet } from '@metaplex/js'
+import { Tooltip } from '@mui/material'
+import { BN } from '@project-serum/anchor'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { PublicKey, Transaction } from '@solana/web3.js'
 import { Footer } from 'common/Footer'
 import { Header } from 'common/Header'
 import { notify } from 'common/Notification'
 import { ShortPubKeyUrl } from 'common/Pubkeys'
+import { getMintDecimalAmountFromNatural } from 'common/units'
+import { pubKeyUrl, shortPubKey, tryPublicKey } from 'common/utils'
+import type { CreationForm } from 'components/StakePoolForm'
+import { StakePoolForm } from 'components/StakePoolForm'
+import { useFormik } from 'formik'
+import { useRewardDistributorData } from 'hooks/useRewardDistributorData'
+import { useRewardMintInfo } from 'hooks/useRewardMintInfo'
 import { useStakePoolData } from 'hooks/useStakePoolData'
 import Head from 'next/head'
 import { useEnvironmentCtx } from 'providers/EnvironmentProvider'
 import { useState } from 'react'
 import { TailSpin } from 'react-loader-spinner'
-import { CreationForm, StakePoolForm } from 'components/StakePoolForm'
-import { useRewardDistributorData } from 'hooks/useRewardDistributorData'
-import { pubKeyUrl, shortPubKey, tryPublicKey } from 'common/utils'
-import { findStakeEntryIdFromMint } from '@cardinal/staking/dist/cjs/programs/stakePool/utils'
 import * as Yup from 'yup'
-import { useFormik } from 'formik'
-import { getMintDecimalAmountFromNatural } from 'common/units'
-import { useRewardMintInfo } from 'hooks/useRewardMintInfo'
-import { Tooltip } from '@mui/material'
-import { executeAllTransactions } from 'api/utils'
 
 const publicKeyValidationTest = (value: string | undefined): boolean => {
   return tryPublicKey(value) ? true : false
@@ -119,7 +119,7 @@ function AdminStakePool() {
         values.multiplierMints = []
       if (values.multipliers.toString() === [''].toString())
         values.multipliers = []
-      let pubKeysToSetMultiplier = []
+      const pubKeysToSetMultiplier = []
       for (let i = 0; i < values.multiplierMints.length; i++) {
         if (values.multiplierMints[i] !== '' && values.multipliers[i] !== '') {
           pubKeysToSetMultiplier.push(new PublicKey(values.multiplierMints[i]!))
@@ -151,7 +151,7 @@ function AdminStakePool() {
       }
 
       for (let i = 0; i < pubKeysToSetMultiplier.length; i++) {
-        let mint = pubKeysToSetMultiplier[i]!
+        const mint = pubKeysToSetMultiplier[i]!
         const [stakeEntryId] = await findStakeEntryIdFromMint(
           connection,
           wallet.publicKey!,
@@ -211,7 +211,7 @@ function AdminStakePool() {
         notify({ message: `Error: No mints inserted` })
       }
       for (let i = 0; i < authorizePublicKeys.length; i++) {
-        let mint = authorizePublicKeys[i]!
+        const mint = authorizePublicKeys[i]!
         const transaction = await withAuthorizeStakeEntry(
           new Transaction(),
           connection,
@@ -416,7 +416,7 @@ function AdminStakePool() {
       const mintId = new PublicKey(mintToLookup)
       let stakeEntryId: PublicKey
       try {
-        ;[stakeEntryId] = await findStakeEntryIdFromMint(
+        [stakeEntryId] = await findStakeEntryIdFromMint(
           connection,
           wallet.publicKey!,
           stakePool.data!.pubkey,
@@ -499,6 +499,7 @@ function AdminStakePool() {
                 {stakePool.isFetched ? (
                   <>
                     <span className="flex w-full flex-wrap md:mb-0">
+                      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                       <label className="inline-block text-sm font-bold uppercase tracking-wide text-gray-200">
                         Overlay Text:
                       </label>
@@ -507,6 +508,7 @@ function AdminStakePool() {
                       </label>
                     </span>
                     <span className="mt-3 flex w-full flex-wrap md:mb-0">
+                      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                       <label className="inline-block text-sm font-bold uppercase tracking-wide text-gray-200">
                         Collection Addresses:
                       </label>
@@ -516,6 +518,7 @@ function AdminStakePool() {
                           ? stakePool.data?.parsed.requiresCollections.map(
                               (collection) => (
                                 <ShortPubKeyUrl
+                                    key={collection?.toBase58?.() || ''}
                                   pubkey={collection}
                                   cluster={environment.label}
                                   className="pr-2 text-sm text-white"
@@ -526,6 +529,7 @@ function AdminStakePool() {
                       </label>
                     </span>
                     <span className="mt-3 flex w-full flex-wrap md:mb-0">
+                      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                       <label className="inline-block text-sm font-bold uppercase tracking-wide text-gray-200">
                         Creator Addresses:
                       </label>
@@ -535,6 +539,7 @@ function AdminStakePool() {
                           ? stakePool.data?.parsed.requiresCreators.map(
                               (creator) => (
                                 <ShortPubKeyUrl
+                                    key={creator?.toBase58?.() || ''}
                                   pubkey={creator}
                                   cluster={environment.label}
                                   className="pr-2 text-sm font-bold underline underline-offset-2"
@@ -588,7 +593,7 @@ function AdminStakePool() {
                                 href={pubKeyUrl(
                                   rewardDistributor.data.pubkey,
                                   environment.label
-                                )}
+                                )} rel="noreferrer"
                               >
                                 {shortPubKey(rewardDistributor.data.pubkey)}
                               </a>{' '}
@@ -688,7 +693,7 @@ function AdminStakePool() {
                     </p>
                     <p className="text-sm italic text-gray-300">
                       For decimal multipliers, work with the reward
-                      distributor's <b>multiplierDecimals</b>. If you set
+                      distributor&apos;s <b>multiplierDecimals</b>. If you set
                       multiplierDecimals = 1, then for 1.5x multiplier, enter
                       value 15 so that value/10**multiplierDecimals = 15/10^1 =
                       1.5
@@ -704,7 +709,7 @@ function AdminStakePool() {
                       <a
                         href="https://github.com/cardinal-labs/cardinal-staking/tree/main/tools"
                         className="text-blue-500"
-                        target="_blank"
+                        target="_blank" rel="noreferrer"
                       >
                         tools
                       </a>{' '}
@@ -838,6 +843,7 @@ function AdminStakePool() {
                         href="https://github.com/cardinal-labs/cardinal-staking/tree/main/tools"
                         className="text-blue-500"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         tools
                       </a>{' '}

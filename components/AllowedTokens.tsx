@@ -1,5 +1,5 @@
-import { AccountData } from '@cardinal/common'
-import { StakePoolData } from '@cardinal/staking/dist/cjs/programs/stakePool'
+import type { AccountData } from '@cardinal/common'
+import type { StakePoolData } from '@cardinal/staking/dist/cjs/programs/stakePool'
 import { useStakeAuthorizationsForPool } from 'hooks/useStakeAuthorizationsForPool'
 import { useEnvironmentCtx } from 'providers/EnvironmentProvider'
 import { ShortPubKeyUrl } from '../common/Pubkeys'

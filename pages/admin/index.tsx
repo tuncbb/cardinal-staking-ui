@@ -4,7 +4,7 @@ import {
   handleError,
 } from '@cardinal/staking'
 import { withInitRewardDistributor } from '@cardinal/staking/dist/cjs/programs/rewardDistributor/transaction'
-import { Wallet } from '@metaplex/js'
+import type { Wallet } from '@metaplex/js'
 import { BN } from '@project-serum/anchor'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { PublicKey } from '@solana/web3.js'
@@ -12,7 +12,7 @@ import { Header } from 'common/Header'
 import { notify } from 'common/Notification'
 import Head from 'next/head'
 import { useEnvironmentCtx } from 'providers/EnvironmentProvider'
-import * as splToken from '@solana/spl-token'
+import type * as splToken from '@solana/spl-token'
 import { useState } from 'react'
 import { Placeholder } from 'pages'
 import { pubKeyUrl, shortPubKey } from 'common/utils'
@@ -21,8 +21,9 @@ import { useStakePoolsByAuthority } from 'hooks/useStakePoolsByAuthority'
 import { useStakePoolsMetadatas } from 'hooks/useStakePoolsMetadata'
 import { Footer } from 'common/Footer'
 import { tryPublicKey } from 'common/utils'
-import { CreationForm, StakePoolForm } from 'components/StakePoolForm'
-import { StakePool } from 'hooks/useAllStakePools'
+import type { CreationForm } from 'components/StakePoolForm'
+import { StakePoolForm } from 'components/StakePoolForm'
+import type { StakePool } from 'hooks/useAllStakePools'
 
 function Admin() {
   const { connection, environment } = useEnvironmentCtx()
@@ -214,6 +215,7 @@ function Admin() {
                   .concat(stakePoolsWithoutMetadata)
                   .map((stakePool) => (
                     <div
+                        key={(stakePool?.stakePoolMetadata?.name || '') + stakePool?.stakePoolMetadata?.stakePoolAddress || ''}
                       className="h-[300px] cursor-pointer rounded-lg bg-white bg-opacity-5 p-10 transition-all duration-100 hover:scale-[1.01]"
                       onClick={() => {
                         window.open(
@@ -297,16 +299,16 @@ function Admin() {
 export default Admin
 
 export const customStyles = {
-  control: (base: {}) => ({
+  control: (base: object) => ({
     ...base,
     background: 'rgb(55, 65, 81)',
     borderColor: 'rgb(107, 114, 128)',
   }),
-  Input: (base: {}) => ({
+  Input: (base: object) => ({
     ...base,
     color: 'white',
   }),
-  menu: (base: {}) => ({
+  menu: (base: object) => ({
     ...base,
     background: 'rgb(55, 65, 81)',
     '&:hover': {
@@ -318,7 +320,7 @@ export const customStyles = {
     borderRadius: 0,
     marginTop: 0,
   }),
-  option: (base: {}) => ({
+  option: (base: object) => ({
     ...base,
     background: 'rgb(55, 65, 81)',
     '&:hover': {
@@ -328,7 +330,7 @@ export const customStyles = {
       background: 'rgb(75, 85, 99) !important',
     },
   }),
-  singleValue: (provided: {}) => ({
+  singleValue: (provided: object) => ({
     ...provided,
     color: 'white',
   }),
