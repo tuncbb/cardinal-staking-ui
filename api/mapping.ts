@@ -79,7 +79,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     stakePoolAddress: new PublicKey(
       'J79xX6CYxXZzXQSy6g6hkBnnfFs7pRDjqy4nFKjnXvu9'
     ),
-    websiteUrl: 'https://thornode.io',
+    websiteUrl: 'https://stake.thornode.io',
     receiptType: ReceiptType.Original,
     maxStaked: 33, // update with collection size
     imageUrl:
@@ -104,7 +104,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     stakePoolAddress: new PublicKey(
       '54LKhj2FY5Vg5uR6NBEQ4SiLJNRYCUX1oWxTZcUXZ8cE'
     ),
-    websiteUrl: 'https://thornode.io',
+    websiteUrl: 'https://stake.thornode.io',
     receiptType: ReceiptType.Original,
     maxStaked: 300, // update with collection size
     imageUrl:
