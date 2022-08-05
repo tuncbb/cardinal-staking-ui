@@ -52,9 +52,6 @@ export const Footer = ({
             <a href="/" className="text-gray-400">
               Pools
             </a>
-            <a href="/admin" className="text-gray-400">
-              Admin
-            </a>
           </span>
           <span className="flex flex-col items-start gap-1">
             <div
@@ -66,7 +63,7 @@ export const Footer = ({
             <a href="https://thornode.io" className="text-gray-400">
               Contact
             </a>
-            <a href="mailto:contact@thornode.io?subject=Hello!" className="text-gray-400">
+            <a href="https://www.thornode.io" className="text-gray-400" target="_blank">
               ThorNode.io
             </a>
             {/*<a href="" className="text-gray-400">
@@ -109,11 +106,15 @@ export const Footer = ({
 
                 Powered by
 
-                <img
+                <a href="https://www.cardinal.so/" className="text-gray-400" target="_blank">
+              <img
+
                     className="inline-block w-20"
                     src={'/cardinal-titled.png'}
                     />
+            </a>
             </div>
+
         </span>
         <div className="flex gap-4 text-gray-200">
           {Object.entries(SOCIALS).map(([id, { icon, link }]) => {

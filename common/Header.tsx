@@ -69,8 +69,7 @@ export const Header = () => {
       <div className={`flex h-20 justify-between px-5 text-white`}>
         <div className="flex items-center gap-3">
           <a
-            target="_blank"
-            href="https://thornode.io"
+            href="https://stake.thornode.io"
             className="flex cursor-pointer text-xl font-semibold text-white hover:text-gray-400"
           >
               <TitleText className="flex items-center justify-center gap-2">
@@ -106,19 +105,6 @@ export const Header = () => {
             ))
           ) : (
             <>
-              <div
-                onClick={() =>
-                  router.push(
-                    `/admin${
-                      ctx.environment.label !== 'mainnet-beta'
-                        ? `?cluster=${ctx.environment.label}`
-                        : ''
-                    }`
-                  )
-                }
-              >
-                <p className="my-auto mr-10 hover:cursor-pointer">Admin</p>
-              </div>
             </>
           )}
           {wallet.connected && wallet.publicKey ? (
