@@ -102,13 +102,13 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     name: 'thornode-classic',
     displayName: 'Classic Pass',
     stakePoolAddress: new PublicKey(
-      'J2kvKqkTMbXdbWS3eGmJFv35tKTrzy7wxkJmCzEJ7KAG' // todo fixme address must be unique
+      '54LKhj2FY5Vg5uR6NBEQ4SiLJNRYCUX1oWxTZcUXZ8cE'
     ),
     websiteUrl: 'https://thornode.io',
     receiptType: ReceiptType.Original,
     maxStaked: 300, // update with collection size
     imageUrl:
-      'https://v4pnvyuwfsaiymwlmqr4mvemptw2lmqyrwmilxg2prlw7qrqf3qq.arweave.net/rx7a4pYsgIwyy2QjxlSMfO2lshiNmIXc2nxXb8IwLuE?ext=gif',
+      'https://i.ibb.co/fxZqZWR/lossy-compressed-3.gif',
     tokenStandard: TokenStandard.NonFungible,
     hideAllowedTokens: false,
     hidden: false,
@@ -117,10 +117,10 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       fontWeight: 500,
     },
     colors: {
-      primary: '#131313',
-      secondary: '#858585',
-      accent: 'rgba(31,119,207,0.11)',
-      fontColor: '#FFFFFF',
+      primary: '#1f2d78',
+      secondary: '#4359a4',
+      accent: 'rgba(97,145,196,255)',
+      fontColor: '#e8e8e8',
     },
   },
 ]
