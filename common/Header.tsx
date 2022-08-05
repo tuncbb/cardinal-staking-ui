@@ -37,7 +37,7 @@ export const Header = () => {
   const { clockDrift } = useUTCNow()
 
   return (
-    <div>
+    <div className={'header'}>
       {clockDrift && (
         <div
           className="flex w-full items-center justify-center rounded-md py-2 text-center"

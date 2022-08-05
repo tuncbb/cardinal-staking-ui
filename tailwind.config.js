@@ -6,7 +6,11 @@ module.exports = {
     './rental-components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'anton': ['Anton', 'sans-serif']
+      },
+    },
   },
   plugins: [],
 }
