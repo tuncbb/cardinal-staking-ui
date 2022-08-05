@@ -46,6 +46,7 @@ export const Header = () => {
             background: lighten(
               0.15,
               stakePoolMetadata?.colors?.primary || '#000'
+
             ),
           }}
         >
@@ -69,14 +70,7 @@ export const Header = () => {
         <div className="flex items-center gap-3">
           <a
             target="_blank"
-            href={
-              stakePoolMetadata?.websiteUrl ||
-              `/${
-                ctx.environment.label !== 'mainnet-beta'
-                  ? `?cluster=${ctx.environment.label}`
-                  : ''
-              }`
-            }
+            href="https://thornode.io"
             className="flex cursor-pointer text-xl font-semibold text-white hover:text-gray-400"
           >
             {stakePoolMetadata?.imageUrl ? (
@@ -94,10 +88,10 @@ export const Header = () => {
                 {stakePoolMetadata?.displayName || (
                   <img
                     className="inline-block w-4"
-                    src={'/cardinal-crosshair.svg'}
+                    src={'/thor-crosshair.svg'}
                   />
                 )}{' '}
-                Thor Node Staking
+                ThorNode
               </TitleText>
             )}
           </a>

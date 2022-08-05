@@ -88,7 +88,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     hideAllowedTokens: false,
     hidden: false,
     styles: {
-      fontFamily: 'Industry, sans-serif',
+      fontFamily: 'anton',
       fontWeight: 500,
     },
     colors: {
@@ -113,14 +113,15 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     hideAllowedTokens: false,
     hidden: false,
     styles: {
-      fontFamily: 'Industry, sans-serif',
+      fontFamily: 'anton',
       fontWeight: 500,
     },
     colors: {
-      primary: '#1f2d78',
+      primary: '#0e1b3a',
       secondary: '#b287e1',
-      accent: 'rgba(97,145,196,255)',
+      accent: 'rgba(31,207,101,0.11)',
       fontColor: '#e8e8e8',
+      backgroundBannerImageUrl: 'https://i.ibb.co/fxZqZWR/lossy-compressed-3.gif',
     },
   },
 ]

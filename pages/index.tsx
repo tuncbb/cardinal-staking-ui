@@ -23,7 +23,7 @@ function Home() {
     <div>
       <Head>
         <title>Thor Node Staking</title>
-        <meta name="description" content="Thor Node Staking" />
+        <meta name="description" content="ThorNode Staking" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

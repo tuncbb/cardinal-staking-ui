@@ -33,12 +33,14 @@ export const Footer = ({
             }
           />
           <span
-            className="ml-3 text-2xl font-semibold"
-            style={{ color: lighten(0.4, contrastColorMode(bgColor)[0]) }}
-          >
-            Thor Node
+                className="ml-3 text-2xl font-semibold"
+                style={{ color: lighten(0.4, contrastColorMode(bgColor)[0]) }}
+              >
+                ThorNode RPCs
           </span>
+
         </div>
+
         <div className="flex gap-10 self-end text-center md:gap-20">
           <span className="flex flex-col items-start gap-1">
             <div
@@ -61,8 +63,11 @@ export const Footer = ({
             >
               Resources
             </div>
-            <a href="mailto:contact@thornode.io?subject=Hello!" className="text-gray-400">
+            <a href="https://thornode.io" className="text-gray-400">
               Contact
+            </a>
+            <a href="mailto:contact@thornode.io?subject=Hello!" className="text-gray-400">
+              ThorNode.io
             </a>
             {/*<a href="" className="text-gray-400">
               Privacy
@@ -93,11 +98,23 @@ export const Footer = ({
       </div>
       <div
         className="text-md flex items-center justify-between border-t py-8 text-gray-400"
-        style={{ borderColor: lighten(0.2, bgColor) }}
+            style={{ borderColor: lighten(0.3, bgColor) }}
       >
-        <div className="flex items-center justify-center gap-2 text-gray-400">
-          © 2022 Thor Node. All rights reserved.
-        </div>
+        <span>
+            <div className="flex items-center justify-left gap-2 text-gray-400">
+               © 2022 ThorNode RPCs. All rights reserved.
+            </div>
+
+            <div className="flex items-center justify-left gap-2 text-gray-400">
+
+                Powered by
+
+                <img
+                    className="inline-block w-20"
+                    src={'/cardinal-titled.png'}
+                    />
+            </div>
+        </span>
         <div className="flex gap-4 text-gray-200">
           {Object.entries(SOCIALS).map(([id, { icon, link }]) => {
             return (
@@ -106,7 +123,7 @@ export const Footer = ({
                 href={link}
                 target="_blank"
                 rel="noreferrer"
-                style={{ color: accentColor }}
+                style={{ color: accentColor}}
                 className={`hover:text-primary opacity-80 transition-opacity hover:opacity-100`}
               >
                 {icon}
