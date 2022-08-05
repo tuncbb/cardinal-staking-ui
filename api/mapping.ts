@@ -121,7 +121,6 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       secondary: '#b287e1',
       accent: 'rgba(31,207,101,0.11)',
       fontColor: '#e8e8e8',
-      backgroundBannerImageUrl: 'https://i.ibb.co/fxZqZWR/lossy-compressed-3.gif',
     },
   },
 ]
