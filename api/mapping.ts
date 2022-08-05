@@ -118,7 +118,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     },
     colors: {
       primary: '#1f2d78',
-      secondary: '#4359a4',
+      secondary: '#b287e1',
       accent: 'rgba(97,145,196,255)',
       fontColor: '#e8e8e8',
     },
