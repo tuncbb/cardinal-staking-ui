@@ -73,27 +73,14 @@ export const Header = () => {
             href="https://thornode.io"
             className="flex cursor-pointer text-xl font-semibold text-white hover:text-gray-400"
           >
-            {stakePoolMetadata?.imageUrl ? (
-              <div className="flex flex-row">
-                <img
-                  className="flex h-[35px] flex-col"
-                  src={stakePoolMetadata?.imageUrl}
-                />
-                {/* <span className="ml-5 mt-1 flex flex-col">
-                  {stakePoolMetadata?.displayName} Staking
-                </span> */}
-              </div>
-            ) : (
               <TitleText className="flex items-center justify-center gap-2">
                 {stakePoolMetadata?.displayName || (
                   <img
-                    className="inline-block w-4"
-                    src={'/thor-crosshair.svg'}
+                    className="inline-block w-40"
+                    src={'/thornode-white.png'}
                   />
                 )}{' '}
-                ThorNode
               </TitleText>
-            )}
           </a>
           {ctx.environment.label !== 'mainnet-beta' && (
             <div className="cursor-pointer rounded-md bg-[#9945ff] p-1 text-[10px] italic text-white">
