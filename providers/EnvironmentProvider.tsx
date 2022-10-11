@@ -20,7 +20,7 @@ export interface EnvironmentContextValues {
 export const ENVIRONMENTS: Environment[] = [
   {
     label: 'mainnet-beta',
-    primary: process.env.MAINNET_PRIMARY || 'https://ssc-dao.genesysgo.net',
+    primary: process.env.MAINNET_PRIMARY || 'https://rpc-eu.thornode.io/6a29ccc6-82c4-40e1-820a-a1c5aaea943f',
     secondary: 'https://ssc-dao.genesysgo.net',
   },
   {
