@@ -77,7 +77,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     name: 'thornode-elite',
     displayName: 'Elite Pass',
     stakePoolAddress: new PublicKey(
-      'J79xX6CYxXZzXQSy6g6hkBnnfFs7pRDjqy4nFKjnXvu9'
+      '9YwMCQnqsFyztvvPcgJxfrgpFX36aKLZqma2HL3T7Fr'
     ),
     websiteUrl: 'https://stake.thornode.io',
     receiptType: ReceiptType.Original,
