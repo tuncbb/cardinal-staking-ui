@@ -20,8 +20,8 @@ export interface EnvironmentContextValues {
 export const ENVIRONMENTS: Environment[] = [
   {
     label: 'mainnet-beta',
-    primary: process.env.MAINNET_PRIMARY || 'https://rpc-va-10.thornode.io/6d500c2c-9cc4-4e0a-88bb-8e614fec549e',
-    secondary: 'https://rpc-va-10.thornode.io/6d500c2c-9cc4-4e0a-88bb-8e614fec549e',
+    primary: 'https://long-quaint-crater.solana-mainnet.quiknode.pro/081fa2ea72f21bebe411935bb06e0f88a70e6fe0/',
+    //secondary: 'https://rpc-va-10.thornode.io/6d500c2c-9cc4-4e0a-88bb-8e614fec549e',
   },
   {
     label: 'testnet',
