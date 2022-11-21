@@ -20,8 +20,8 @@ export interface EnvironmentContextValues {
 export const ENVIRONMENTS: Environment[] = [
   {
     label: 'mainnet-beta',
-    primary: process.env.MAINNET_PRIMARY || 'https://rpc-eu.thornode.io/6a29ccc6-82c4-40e1-820a-a1c5aaea943f',
-    secondary: 'https://rpc-eu.thornode.io/6a29ccc6-82c4-40e1-820a-a1c5aaea943f',
+    primary: process.env.MAINNET_PRIMARY || 'https://rpc-va-10.thornode.io/6d500c2c-9cc4-4e0a-88bb-8e614fec549e',
+    secondary: 'https://rpc-va-10.thornode.io/6d500c2c-9cc4-4e0a-88bb-8e614fec549e',
   },
   {
     label: 'testnet',
